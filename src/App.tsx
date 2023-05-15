@@ -9,9 +9,8 @@ import Col from "react-bootstrap/Col";
 import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 
-const [SelectedGenre, setSelectedGenre] = useState<Genre | null>(null);
-
 function App() {
+  const [SelectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   return (
     <Container fluid="md">
       <Row>

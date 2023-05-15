@@ -19,10 +19,11 @@ const GenresList = ({ onSelectedGenre }: Props) => {
           <li key={g.id} className="d-flex p-1 ">
             <img src={cropImgUrl(g.image_background)} className="genreImg" />
             <Button
+              className="text-decoration-none text-lg-start text-dark fw-bolder"
+              size="lg"
+              variant="link"
               onClick={() => onSelectedGenre(g)}
-              className="genreParagraph"
             >
-              {" "}
               {g.name}
             </Button>
           </li>
