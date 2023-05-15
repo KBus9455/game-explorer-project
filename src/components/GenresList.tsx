@@ -1,8 +1,12 @@
-import useGenres from "../hooks/useGenres";
-import { Spinner } from "react-bootstrap";
+import useGenres, { Genre } from "../hooks/useGenres";
+import { Button, Spinner } from "react-bootstrap";
 import cropImgUrl from "../services/image-url";
 
-const GenresList = () => {
+interface Props {
+  onSelectedGenre: (genre: Genre) => void;
+}
+
+const GenresList = ({ onSelectedGenre }: Props) => {
   const { data, error, isLoading } = useGenres();
 
   if (isLoading == true) return <Spinner />;
@@ -14,7 +18,13 @@ const GenresList = () => {
         {data.map((g) => (
           <li key={g.id} className="d-flex p-1 ">
             <img src={cropImgUrl(g.image_background)} className="genreImg" />
-            <h5 className="genreParagraph"> {g.name}</h5>
+            <Button
+              onClick={() => onSelectedGenre(g)}
+              className="genreParagraph"
+            >
+              {" "}
+              {g.name}
+            </Button>
           </li>
         ))}
       </ul>

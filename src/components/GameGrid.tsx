@@ -1,13 +1,16 @@
-import { Col, Row } from "react-bootstrap";
 import GameCard from "./GameCard";
 import GameCardContainer from "./GameCardContainer";
 import useGames from "../hooks/useGames";
 import CardGroup from "react-bootstrap/CardGroup";
 import GameCardSkeleton from "./GameCardSkeleton";
+import { Genre } from "../hooks/useGenres";
+interface Props {
+  selectedGenre: Genre | null;
+}
 
 const skeleton = [1, 2, 3, 4, 5, 6];
-const GameGrid = () => {
-  const { data, error, isLoading } = useGames();
+const GameGrid = ({ selectedGenre }: Props) => {
+  const { data, error, isLoading } = useGames(selectedGenre);
 
   return (
     <>

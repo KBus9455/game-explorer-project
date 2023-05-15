@@ -6,6 +6,10 @@ import GenresList from "./components/GenresList";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import { useState } from "react";
+import { Genre } from "./hooks/useGenres";
+
+const [SelectedGenre, setSelectedGenre] = useState<Genre | null>(null);
 
 function App() {
   return (
@@ -18,10 +22,10 @@ function App() {
       </Row>
       <Row>
         <Col md={3}>
-          <GenresList />
+          <GenresList onSelectedGenre={(genre) => setSelectedGenre(genre)} />
         </Col>
         <Col>
-          <GameGrid></GameGrid>
+          <GameGrid selectedGenre={SelectedGenre}></GameGrid>
         </Col>
       </Row>
     </Container>

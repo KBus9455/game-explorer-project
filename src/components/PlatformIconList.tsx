@@ -11,8 +11,6 @@ import { MdPhoneIphone } from "react-icons/md"; //materialdesign
 import { SiNintendo } from "react-icons/si";
 import { BsGlobe } from "react-icons/bs"; //bootstrap
 import { Platform } from "../hooks/useGames";
-import { Tooltip } from "react-tooltip";
-import "react-tooltip/dist/react-tooltip.css";
 import { Container, Row } from "react-bootstrap";
 import { ReactElement } from "react";
 
