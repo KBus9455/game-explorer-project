@@ -10,7 +10,7 @@ import { useState } from "react";
 import { Genre } from "./hooks/useGenres";
 
 function App() {
-  const [SelectedGenre, setSelectedGenre] = useState<Genre | null>(null);
+  const [selectedGenre, setSelectedGenre] = useState<Genre | null>(null);
   return (
     <Container fluid="md">
       <Row>
@@ -21,10 +21,13 @@ function App() {
       </Row>
       <Row>
         <Col md={3}>
-          <GenresList onSelectedGenre={(genre) => setSelectedGenre(genre)} />
+          <GenresList
+            selectedGenre={selectedGenre}
+            onSelectedGenre={(genre) => setSelectedGenre(genre)}
+          />
         </Col>
         <Col>
-          <GameGrid selectedGenre={SelectedGenre}></GameGrid>
+          <GameGrid selectedGenre={selectedGenre}></GameGrid>
         </Col>
       </Row>
     </Container>
