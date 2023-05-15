@@ -1,11 +1,7 @@
-import { Row } from "react-bootstrap";
+import PlatformSelector from "./PlatformSelector";
 
 const NavBar = () => {
-  return (
-    <>
-      <p>NavBar</p>
-    </>
-  );
+  return <></>;
 };
 
 export default NavBar;
