@@ -1,13 +1,26 @@
 import { Dropdown, DropdownButton } from "react-bootstrap";
 import usePlatforms from "../hooks/usePlatforms";
-
-const PlatformSelector = () => {
+import { Platform } from "../hooks/usePlatforms";
+interface Props {
+  onSelectedPlatform: (platform: Platform) => void;
+  selectedPlatform: Platform | null;
+}
+const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
   const { data, error } = usePlatforms();
   if (error) return null;
   return (
-    <DropdownButton size="lg" variant="dark" title="Platforms">
+    <DropdownButton
+      size="lg"
+      variant="dark"
+      title={selectedPlatform === null ? "Platforms" : selectedPlatform.name}
+    >
       {data.map((platform) => (
-        <Dropdown.Item href="#/action-1">{platform.name}</Dropdown.Item>
+        <Dropdown.Item
+          key={platform.id}
+          onClick={() => onSelectedPlatform(platform)}
+        >
+          {platform.name}
+        </Dropdown.Item>
       ))}
     </DropdownButton>
   );
