@@ -13,7 +13,12 @@ const sortOrders = [
 ];
 const SortSelector = () => {
   return (
-    <DropdownButton size="lg" variant="dark" title="Order by Relevance">
+    <DropdownButton
+      className="p-2"
+      size="lg"
+      variant="dark"
+      title="Order by Relevance"
+    >
       {sortOrders.map((sortOrder) => (
         <Dropdown.Item key={sortOrder.value}>{sortOrder.label}</Dropdown.Item>
       ))}

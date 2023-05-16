@@ -3,8 +3,6 @@ import GameCardContainer from "./GameCardContainer";
 import useGames from "../hooks/useGames";
 import CardGroup from "react-bootstrap/CardGroup";
 import GameCardSkeleton from "./GameCardSkeleton";
-import { Genre } from "../hooks/useGenres";
-import { Platform } from "../hooks/usePlatforms";
 import { GameQuery } from "../App";
 
 interface Props {

@@ -36,7 +36,7 @@ function App() {
           />
         </Col>
         <Col>
-          <div className="d-inline p-2">
+          <div className="d-flex ">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectedPlatform={(platform) =>
