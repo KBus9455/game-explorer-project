@@ -1,6 +1,5 @@
 import { Game } from "../hooks/useGames";
-import { Badge, Card, Row } from "react-bootstrap";
-
+import { Card } from "react-bootstrap";
 import PlatformIconList from "./PlatformIconList";
 import CriticScore from "./CriticScore";
 import cropImgUrl from "../services/image-url";
