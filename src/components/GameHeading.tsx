@@ -9,8 +9,9 @@ interface Props {
 const GameHeading = ({ genre, platform }: Props) => {
   return (
     <h2>
+      {platform ? platform.name : ""} <span> </span>
       {genre ? genre.name : ""} <span> </span>
-      {platform ? platform.name : ""} Games
+      Games
     </h2>
   );
 };
