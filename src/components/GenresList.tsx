@@ -14,6 +14,7 @@ const GenresList = ({ onSelectedGenre, selectedGenre }: Props) => {
 
   return (
     <>
+      <h2>Genres</h2>
       {error && null}
       <ul className="genresList">
         {data.map((g) => (
