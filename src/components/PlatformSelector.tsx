@@ -10,7 +10,6 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
   if (error) return null;
   return (
     <DropdownButton
-      className="p-2"
       size="lg"
       variant="dark"
       title={selectedPlatform ? selectedPlatform.name : "Platforms"}

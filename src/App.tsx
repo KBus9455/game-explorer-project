@@ -45,7 +45,7 @@ function App() {
             genre={gameQuery.genre}
             platform={gameQuery.platform}
           ></GameHeading>
-          <div className="d-flex ">
+          <div className="d-flex pt-3 pb-3">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectedPlatform={(platform) =>

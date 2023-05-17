@@ -17,7 +17,7 @@ const SortSelector = ({ onSelectSortOrder, selectedOrder }: Props) => {
     ? "Order by " + sortOrder.label
     : "Order by Relevence";
   return (
-    <DropdownButton className="p-2" size="lg" variant="dark" title={label}>
+    <DropdownButton className="px-2" size="lg" variant="dark" title={label}>
       {sortOrders.map((sortOrder) => (
         <Dropdown.Item
           onClick={() => onSelectSortOrder(sortOrder.value)}
