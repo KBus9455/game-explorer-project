@@ -11,6 +11,7 @@ import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import SearchGamesInput from "./components/SearchGamesInput";
+import GameHeading from "./components/GameHeading";
 
 export interface GameQuery {
   genre: Genre | null;
@@ -40,6 +41,10 @@ function App() {
           />
         </Col>
         <Col>
+          <GameHeading
+            genre={gameQuery.genre}
+            platform={gameQuery.platform}
+          ></GameHeading>
           <div className="d-flex ">
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
