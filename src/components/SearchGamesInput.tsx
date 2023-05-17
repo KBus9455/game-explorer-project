@@ -1,14 +1,28 @@
 import { InputGroup, Form } from "react-bootstrap";
 import { BsSearch } from "react-icons/bs";
+import { useRef } from "react";
 
-const SearchGamesInput = () => {
+interface Props {
+  onSearch: (searchText: string) => void;
+}
+
+const SearchGamesInput = ({ onSearch }: Props) => {
+  const ref = useRef<HTMLInputElement>(null);
+
   return (
-    <InputGroup className="mb-3 " size="lg">
-      <InputGroup.Text>
-        <BsSearch />
-      </InputGroup.Text>
-      <Form.Control placeholder={"Search Games..."} />
-    </InputGroup>
+    <form
+      onSubmit={(event) => {
+        event.preventDefault();
+        if (ref.current) onSearch(ref.current.value);
+      }}
+    >
+      <InputGroup className="mb-3 " size="lg">
+        <InputGroup.Text>
+          <BsSearch />
+        </InputGroup.Text>
+        <Form.Control ref={ref} placeholder={"Search Games..."} />
+      </InputGroup>
+    </form>
   );
 };
 

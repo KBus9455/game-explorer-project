@@ -12,7 +12,7 @@ const PlatformSelector = ({ onSelectedPlatform, selectedPlatform }: Props) => {
     <DropdownButton
       className="p-2"
       size="lg"
-      variant="dark"
+      variant="secondary"
       title={selectedPlatform ? selectedPlatform.name : "Platforms"}
     >
       {data.map((platform) => (

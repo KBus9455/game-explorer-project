@@ -1,5 +1,4 @@
 import "./App.css";
-import NavBar from "./components/NavBar";
 import HeaderBar from "./components/HeaderBar";
 import GameGrid from "./components/GameGrid";
 import GenresList from "./components/GenresList";
@@ -11,11 +10,13 @@ import { Genre } from "./hooks/useGenres";
 import PlatformSelector from "./components/PlatformSelector";
 import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
+import SearchGamesInput from "./components/SearchGamesInput";
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
+  searchText: string;
 }
 
 function App() {
@@ -27,7 +28,9 @@ function App() {
         <HeaderBar></HeaderBar>
       </Row>
       <Row>
-        <NavBar></NavBar>
+        <SearchGamesInput
+          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+        ></SearchGamesInput>
       </Row>
       <Row>
         <Col md={3}>
@@ -51,7 +54,6 @@ function App() {
               }
             ></SortSelector>
           </div>
-
           <GameGrid gameQuery={gameQuery} />
         </Col>
       </Row>
