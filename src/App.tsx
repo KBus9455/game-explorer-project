@@ -32,14 +32,18 @@ function App() {
       </Row>
       <Row>
         <SearchGamesInput
-          onSearch={(searchText) => setGameQuery({ ...gameQuery, searchText })}
+          onSearch={(searchText) =>
+            setGameQuery({ ...gameQuery, searchText, page: 1 })
+          }
         ></SearchGamesInput>
       </Row>
       <Row>
         <Col md={3}>
           <GenresList
             selectedGenre={gameQuery.genre}
-            onSelectedGenre={(genre) => setGameQuery({ ...gameQuery, genre })}
+            onSelectedGenre={(genre) =>
+              setGameQuery({ ...gameQuery, genre, page: 1 })
+            }
           />
         </Col>
         <Col>
@@ -51,7 +55,7 @@ function App() {
             <PlatformSelector
               selectedPlatform={gameQuery.platform}
               onSelectedPlatform={(platform) =>
-                setGameQuery({ ...gameQuery, platform })
+                setGameQuery({ ...gameQuery, platform, page: 1 })
               }
             ></PlatformSelector>
             <SortSelector
@@ -63,6 +67,7 @@ function App() {
           </div>
           <GameGrid gameQuery={gameQuery} />
           <PaginationBar
+            gameQuery={gameQuery}
             onSelectPage={(page) => setGameQuery({ ...gameQuery, page })}
           ></PaginationBar>
         </Col>

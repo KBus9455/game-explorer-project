@@ -17,6 +17,8 @@ const useData = <T>(
   const [data, setData] = useState<T[]>([]);
   const [error, setError] = useState("");
   const [isLoading, setLoading] = useState(false);
+  const [next, setNext] = useState("");
+  const [previous, setPrevious] = useState("");
 
   const controller = new AbortController();
 
@@ -30,6 +32,8 @@ const useData = <T>(
         })
         .then((res) => {
           console.log(res), setData(res.data.results);
+          setNext(res.data.next);
+          setPrevious(res.data.previous);
           setLoading(false);
           return () => controller.abort();
         })
@@ -42,6 +46,6 @@ const useData = <T>(
     deps ? [...deps] : []
   );
   apiClient.get;
-  return { data, error, isLoading };
+  return { data, error, isLoading, next, previous };
 };
 export default useData;
