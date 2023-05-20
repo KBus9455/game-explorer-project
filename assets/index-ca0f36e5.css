@@ -1,4 +1,4 @@
-@charset "UTF-8";*{margin:0;padding:0;box-sizing:border-box}.genresList{list-style:none;margin:0;padding-left:0}.genreImg{width:40px;height:40px;border-radius:5px}.gameCardContainer{width:300px;border:none}.headerBarName{line-height:80px;margin-bottom:0}.iconList{list-style:none;margin-left:0;padding-left:0}/*!
+@charset "UTF-8";*{margin:0;padding:0;box-sizing:border-box}.genresList{list-style:none;margin:0;padding-left:0}.genreImg{width:40px;height:40px;border-radius:5px;object-fit:cover}.gameCardContainer{width:300px;border:none}.headerBarName{line-height:80px;margin-bottom:0}.iconList{list-style:none;margin-left:0;padding-left:0}/*!
  * Bootstrap  v5.2.3 (https://getbootstrap.com/)
  * Copyright 2011-2022 The Bootstrap Authors
  * Copyright 2011-2022 Twitter, Inc.
