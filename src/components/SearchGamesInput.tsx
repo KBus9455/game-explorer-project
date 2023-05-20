@@ -16,7 +16,7 @@ const SearchGamesInput = ({ onSearch }: Props) => {
         if (ref.current) onSearch(ref.current.value);
       }}
     >
-      <InputGroup className="mb-3 " size="lg">
+      <InputGroup className="mb-3" size="lg">
         <InputGroup.Text>
           <BsSearch />
         </InputGroup.Text>

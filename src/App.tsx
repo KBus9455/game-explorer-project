@@ -12,12 +12,14 @@ import { Platform } from "./hooks/usePlatforms";
 import SortSelector from "./components/SortSelector";
 import SearchGamesInput from "./components/SearchGamesInput";
 import GameHeading from "./components/GameHeading";
+import PaginationBar from "./components/PaginationBar";
 
 export interface GameQuery {
   genre: Genre | null;
   platform: Platform | null;
   sortOrder: string;
   searchText: string;
+  page: number;
 }
 
 function App() {
@@ -26,7 +28,7 @@ function App() {
   return (
     <Container fluid="md">
       <Row>
-        <HeaderBar></HeaderBar>
+        <HeaderBar></HeaderBar>{" "}
       </Row>
       <Row>
         <SearchGamesInput
@@ -57,9 +59,12 @@ function App() {
               onSelectSortOrder={(sortOrder) =>
                 setGameQuery({ ...gameQuery, sortOrder })
               }
-            ></SortSelector>
+            ></SortSelector>{" "}
           </div>
           <GameGrid gameQuery={gameQuery} />
+          <PaginationBar
+            onSelectPage={(page) => setGameQuery({ ...gameQuery, page })}
+          ></PaginationBar>
         </Col>
       </Row>
     </Container>

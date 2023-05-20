@@ -4,6 +4,8 @@ import { AxiosRequestConfig, CanceledError } from "axios";
 
 interface FetchResponse<T> {
   count: number;
+  next: string;
+  previous: string;
   results: T[];
 }
 
